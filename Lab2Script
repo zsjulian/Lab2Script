@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#Lab2 Script
+#Script 
+
+#Script is to determine and print total number of bytes in directory
+#then determine and print out how many files in current directoryhave read permission
+#Estimate the number of shell scripts in current directory.
+
+ls -l
+
+for file in *
+do 
+if [ -f file ]
+then 
+
+if [ -r $file -a -w $file -a -x $file ]
+then
+echo "this file has all permissions"
+ls -l $file
+fi
+fi
+
+echo "Shell Scripts in Current Directory: "
+ls *.sh | wc -l 
